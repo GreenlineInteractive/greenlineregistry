@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Passphrase Verification — The Greenline</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #111;
+      padding: 30px;
+      border: 2px solid #444;
+      width: 300px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background: #000;
+      border: 1px solid #555;
+      color: #fff;
+    }
+
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background: #000;
+      border: 1px solid #888;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .error {
+      margin-top: 10px;
+      color: #ff4444;
+      height: 20px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>PASSCODE REQUIRED</h1>
+
+    <input id="phraseInput" placeholder="Passphrase" autocomplete="off">
+
+    <button onclick="checkPhrase()">ENTER</button>
+
+    <div class="error" id="errorBox"></div>
+  </div>
+
+  <script>
+    const CORRECT_PHRASE = "test";
+
+    function checkPhrase() {
+      const input = document.getElementById("phraseInput").value.trim().toLowerCase();
+      const error = document.getElementById("errorBox");
+
+      if (input === CORRECT_PHRASE) {
+        window.location.href = "staffdocuments.html";
+      } else {
+        error.textContent = "Incorrect phrase.";
+      }
+    }
+  </script>
+
+</body>
+</html>
