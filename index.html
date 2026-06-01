@@ -5,94 +5,97 @@
   <title>The Greenline Registry</title>
   <style>
     body {
-      background: #f2f2f2;
-      font-family: Arial, sans-serif;
-      color: #000;
       margin: 0;
-      padding: 0;
+      background: #ffffff;
+      color: #111;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
       text-align: center;
+      padding: 40px;
+      background: #f7f7f7;
+      border: 1px solid #ccc;
+      width: 350px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
     }
 
-    .banner {
+    h1 {
+      font-size: 22px;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+      color: #009944;
+      text-shadow: 0 0 4px rgba(0,150,60,0.2);
+    }
+
+    button {
       width: 100%;
-      max-width: 900px;
-      margin: 20px auto;
-      border: 3px solid #000;
-      background: linear-gradient(to right, #00aaff, #66ddff);
-      padding: 20px;
-      font-size: 32px;
-      font-weight: bold;
-      color: white;
-      text-shadow: 2px 2px #000;
-    }
-
-    .content {
-      margin-top: 40px;
-      font-size: 18px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.5;
-    }
-
-    .signup-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 40px;
-      background: #ffcc00;
-      border: 3px solid #000;
-      font-size: 20px;
-      font-weight: bold;
+      padding: 12px;
+      margin-top: 15px;
+      background: #fff;
+      border: 1px solid #888;
+      color: #111;
       cursor: pointer;
-      box-shadow: 4px 4px #000;
+      transition: 0.2s;
+      letter-spacing: 1px;
     }
 
-    .signup-btn:active {
-      box-shadow: 1px 1px #000;
-      transform: translate(3px, 3px);
+    button:hover {
+      border-color: #009944;
+      color: #009944;
+      box-shadow: 0 0 10px rgba(0,150,60,0.2);
     }
 
-    .spacer {
-      height: 300px;
+    .closed-message {
+      margin-top: 15px;
+      color: #cc0000;
+      font-size: 14px;
+      height: 20px;
     }
 
-    .footer {
+    .small-footer {
+      text-align: center;
       font-size: 10px;
-      color: #555;
+      color: #777;
       margin-bottom: 20px;
     }
 
-    .footer a {
-      color: #555;
+    .small-footer a {
+      color: #777;
       text-decoration: none;
     }
 
-    .footer a:hover {
+    .small-footer a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="banner">
-    THE GREENLINE REGISTRY
+  <div class="container">
+    <h1>GREENLINE REGISTRY</h1>
+
+    <button onclick="showClosed()">REGISTER</button>
+
+    <div class="closed-message" id="closedBox"></div>
+
+   
   </div>
 
-  <div class="content">
-    <p>Welcome to the official Greenline Registration Portal!</p>
-    <p>Think you have what it takes to compete in the next season?</p>
-    <p>Sign up below to begin your journey!</p>
-
-    <div class="signup-btn">
-      SIGN UP NOW!
-    </div>
-  </div>
-
-  <div class="spacer"></div>
-
-  <div class="footer">
+  <div class="small-footer">
     <a href="staffpage.html">Staff Login</a>
   </div>
+
+  <script>
+    function showClosed() {
+      const box = document.getElementById("closedBox");
+      box.textContent = "Registration for Season 13 is closed.";
+    }
+  </script>
 
 </body>
 </html>
