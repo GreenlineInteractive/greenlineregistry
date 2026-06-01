@@ -1,3 +1,4 @@
+<!-- HEY NO CHEATING -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,13 +70,18 @@
   </div>
 
   <script>
-    const CORRECT_PHRASE = "test";
+    const refrigerator = [
+      "welcome to the greenline",
+      "welcome to the Greenline",
+      "Welcome to the greenline",
+      "Welcome to the Greenline"
+    ];
 
     function checkPhrase() {
-      const input = document.getElementById("phraseInput").value.trim().toLowerCase();
+      const input = document.getElementById("phraseInput").value.trim();
       const error = document.getElementById("errorBox");
 
-      if (input === CORRECT_PHRASE) {
+      if (refrigerator.includes(input)) {
         window.location.href = "staffdocuments.html";
       } else {
         error.textContent = "Incorrect phrase.";
